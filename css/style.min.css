@@ -1,0 +1,1083 @@
+*,
+*::before,
+*::after { 
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0
+}
+/*Это универсальный селектор, который применяет стили ко всем элементам, и их псевдоэлементам ::before и ::after. В данном случае, устанавливаются стили для корректного моделирования блока (box-sizing: border-box), а также обнуляются отступы и поля. */
+ul {
+	list-style: none
+}
+/* Устанавливает стили для списков, убирая стандартное маркирование списка (list-style: none). */
+a {
+	text-decoration: none
+}
+/* Убирает стандартное подчеркивание для ссылок (text-decoration: none). */
+body {
+	background: #fff;
+	font-family: "Open Sans", sans-serif;
+	color: #000;
+	font-size: 18px
+}
+/* Устанавливает стили для тела документа. Устанавливается белый фон, шрифт "Open Sans", черный цвет текста и базовый размер шрифта 18 пикселей. */
+.wrapper {
+	max-width: 1440px;
+	margin: 0 auto
+}
+/* Устанавливает максимальную ширину контейнера (.wrapper) в 1440 пикселей и центрирует его по горизонтали с помощью margin: 0 auto. */
+.container {
+	max-width: 1230px;
+	margin: 0 auto;
+	padding: 0 15px
+}
+/* Устанавливает стили для контейнера с классом .container. Он имеет максимальную ширину 1230 пикселей, центрируется по горизонтали с помощью margin: 0 auto, и имеет внутренние отступы слева и справа по 15 пикселей. */
+svg {
+	width: 100%;
+	height: 100%
+}
+/* Эти стили применяются ко всем элементам <svg>. Устанавливается ширина и высота в 100%, чтобы занимать всю доступную ширину и высоту. */
+.circle {
+	width: 250px;
+	height: 250px;
+	border: 20px solid #E8C300;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%
+}
+/* Эти стили применяются к элементу с классом .circle. Это создает круг с шириной 250 пикселей, высотой 250 пикселей, бордюром шириной 20 пикселей, закругленными углами (создавая круглую форму) и цветом границы #E8C300. Он позиционируется абсолютно (относительно ближайшего позиционированного предка), и его верхний край размещается посередине (top: 50%). */
+section h2 {
+	font-weight: 400;
+	font-size: 42px;
+	font-family: "Kurale", serif
+}
+/* Эти стили применяются к заголовкам внутри элементов <section>. Устанавливается нормальный вес шрифта (font-weight: 400), размер шрифта 42 пикселя (font-size: 42px), и используется шрифт "Kurale" из семейства шрифтов serif. */
+section h2::after {
+	content: '';
+	display: block;
+	width: 60px;
+	height: 5px;
+	background: #E8C300;
+	border-radius: 50px;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 35px
+}
+/* Эти стили добавляют псевдоэлемент ::after к каждому заголовку <h2> внутри элемента <section>. Этот псевдоэлемент является блочным элементом, имеет ширину 60 пикселей, высоту 5 пикселей, фоновый цвет #E8C300, закругленные углы (border-radius: 50px), отступ сверху 10 пикселей, отступ снизу 35 пикселей и центрируется с помощью margin: 0 auto. */
+section p {
+	line-height: 175%;
+	margin-bottom: 25px
+}
+/* Эти стили применяются к абзацам <p> внутри элемента <section>. Задается высота строки 175%, отступ снизу 25 пикселей. */
+.intro {
+	font-weight: 700
+}
+/* Эти стили применяются ко всем элементам с классом .intro. Задается жирное начертание шрифта (font-weight: 700). */
+.home {
+	position: relative;
+	min-height: 800px;
+	outline: 1px solid red
+}
+/* Эти стили применяются к элементу с классом .home. Задается относительное позиционирование (position: relative), минимальная высота 800 пикселей (min-height: 800px), и контур элемента (outline) с красной рамкой для наглядности (outline: 1px solid red). */
+.home__img,
+.home__video {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	-o-object-fit: cover;
+	object-fit: cover
+}
+/* Эти стили применяются к элементам с классами .home__img и .home__video. Устанавливается ширина и высота 100%, абсолютное позиционирование (position: absolute), и свойства object-fit для корректного масштабирования содержимого внутри элемента. */
+.home__container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 2
+}
+/* Эти стили применяются к элементу с классом .home__container. Элемент занимает всю доступную область страницы с помощью абсолютного позиционирования (position: absolute) и задания положения по всем краям (top: 0, left: 0, right: 0, bottom: 0). Z-index устанавливает порядок слоев элементов, и этот элемент имеет более высокий уровень. */
+.home::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0.7));
+}
+/* Этот стиль применяется к псевдоэлементу ::after для элемента с классом .home. Этот псевдоэлемент создает затемнение содержимого элемента с помощью градиента. Это полупрозрачное затемнение создается с использованием линейного градиента от черного к полупрозрачному черному. background задает градиент для нескольких браузеров (в данном случае, для старых версий браузеров). */
+.top-menu__list {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Этот стиль определяет стили для списка с классом .top-menu__list. Здесь используются flex-свойства для выравнивания элементов списка. flex-wrap: wrap разрешает перенос элементов на новую строку, если они не вмещаются в одну строку. justify-content: center центрирует элементы по горизонтали, а align-items: center по вертикали. */
+.top-menu__item {
+	margin: 0 5px
+}
+/* Стиль для элементов списка с классом .top-menu__item. Устанавливается отступ между элементами. */
+.top-menu__item a {
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 700;
+	font-size: 12px;
+	display: block;
+	padding: 40px 25px;
+	transition: 0.3s;
+	border-top: 5px solid transparent
+}
+/* Эти стили применяются к ссылкам, вложенным в элементы списка .top-menu__item. Здесь используется текстовое преобразование в верхний регистр (text-transform: uppercase), устанавливается белый цвет текста (color: #fff), жирный шрифт (font-weight: 700), размер шрифта 12 пикселей (font-size: 12px). padding задает внутренние отступы для создания области нажатия. Также установлены переходы для плавных изменений (transition: 0.3s). Граница сверху (border-top) начинает прозрачной, и она будет изменяться при наведении на элемент. */
+.top-menu__item a:hover {
+	color: #E8C300;
+	border-top: 5px solid #E8C300
+}
+/* Эти стили применяются к ссылкам, когда на них наводится курсор. Цвет текста изменяется на #E8C300, и граница сверху (border-top) также получает цвет #E8C300. */
+.logo {
+	margin: 0 60px
+}
+/* Этот стиль применяется к элементу с классом .logo. Устанавливается отступ между элементами в 60 пикселей. */
+.logo img {
+	position: relative;
+	top: 15px
+}
+/* Стиль для изображения внутри элемента с классом .logo. Изображение поднимается на 15 пикселей относительно его нормального положения. */
+.home__container-center {
+	display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 175px;
+}
+/* Стиль применяется к элементу с классом .home__container-center. Используются свойства flexbox для выравнивания элементов. justify-content: space-between обеспечивает равномерное распределение элементов по горизонтали, align-items: flex-start выравнивает элементы по верхней границе контейнера. Отступ сверху равен 175 пикселям. */
+.socials {
+	width: 62px;
+	margin-top: 40px
+}
+/* Этот стиль применяется к элементу с классом .socials. Устанавливается ширина в 62 пикселя и отступ сверху в 40 пикселей. */
+.socials a {
+	display: block;
+	height: 62px;
+	border-radius: 50%;
+	transition: 0.3s;
+	margin-bottom: 20px
+}
+/* Стиль применяется ко всем ссылкам (<a>) внутри элемента с классом .socials. Каждая ссылка представляет собой круглую иконку. Устанавливается высота и ширина 62 пикселя, границы округляются (border-radius: 50%). Также применяется плавный переход (transition: 0.3s) и добавляется отступ снизу в 20 пикселей. */
+.socials a:hover {
+	background: #E8C300
+}
+/* Эти стили применяются к ссылкам при наведении курсора. Фон ссылки меняется на цвет #E8C300. */
+.home__text {
+	text-align: center
+}
+/* Стиль применяется к элементу с классом .home__text. Выравнивание текста по центру. */
+.home__text h6 {
+	color: #fff;
+	font-size: 18px
+}
+/* Стиль применяется к заголовкам уровня h6 внутри элемента с классом .home__text. Устанавливается цвет текста в белый (#fff) и размер шрифта 18 пикселей. */
+.home__text h1 {
+	color: #E8C300;
+	font-family: "Kurale", serif;
+	font-weight: 400;
+	font-size: 72px;
+	margin-top: 25px
+}
+/* Этот стиль применяется к заголовкам уровня h1 внутри элемента с классом .home__text. Цвет текста устанавливается в #E8C300, шрифт — "Kurale" (с замедленным начертанием), вес шрифта 400, размер шрифта 72 пикселя и отступ сверху в 25 пикселей. */
+.home__text h1::after {
+	content: '';
+	display: block;
+	width: 60px;
+	height: 5px;
+	background: #E8C300;
+	border-radius: 50px;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 35px
+}
+/* Этот стиль добавляет псевдоэлемент ::after к заголовкам h1. Элементу ::after устанавливается содержимое в виде блока (display: block), шириной 60 пикселей, высотой 5 пикселей, фоновым цветом #E8C300, закругленными углами (border-radius: 50%), отступами от верха и снизу, а также отцентрированным внутри заголовка. */
+.home__btns {
+	margin-bottom: 80px
+}
+/* Этот стиль применяется к элементу с классом .home__btns. Он устанавливает отступ снизу в 80 пикселей. */
+.home__btns a {
+	display: inline-block;
+	width: 200px;
+	height: 60px;
+	line-height: 60px;
+	color: #fff;
+	font-weight: 700;
+	font-size: 12px;
+	border-radius: 5px;
+	transition: 0.3s;
+	text-transform: uppercase;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	margin: 0 20px 20px
+}
+/* Этот стиль применяется к ссылкам, находящимся внутри элемента с классом .home__btns. Ссылкам задаются следующие стили:
+display: inline-block;: Устанавливает блочный инлайновый тип для элемента, чтобы можно было задавать ширину и высоту.
+width: 200px;: Ширина ссылки.
+height: 60px;: Высота ссылки.
+line-height: 60px;: Выравнивание текста по центру по вертикали.
+color: #fff;: Белый цвет текста.
+font-weight: 700;: Жирное начертание шрифта.
+font-size: 12px;: Размер шрифта 12 пикселей.
+border-radius: 5px;: Скругление углов радиусом 5 пикселей.
+text-transform: uppercase;: Преобразование текста в верхний регистр.
+border: 1px solid rgba(255, 255, 255, 0.5);: Тонкая белая обводка. */
+.home__btns a:hover {
+	background: #E8C300
+}
+/* Этот стиль применяется к ссылкам при наведении на них курсора. У ссылок меняется фоновый цвет на #E8C300. */
+.home__btns .btn-order {
+	background: #E8C300;
+	border: none
+}
+/* Этот стиль применяется к элементу с классом .btn-order, который является частью .home__btns. Ему устанавливается фоновый цвет #E8C300 и убирается граница. */
+.home__btns .btn-order:hover {
+	background: #b59800
+}
+/* Этот стиль применяется к элементу .btn-order при наведении на него курсора. Меняется фоновый цвет на #b59800. */
+.arrow__about {
+	display: block;
+	width: 62px;
+	height: 62px;
+	margin: 0 auto
+}
+/* Элемент, размер 62x62 пикселя, отображается как блок и центрируется по горизонтали. */
+.time-work {
+	color: #fff;
+    font: 700 12px/1 "Open Sans", sans-serif; /* Сокращенная запись для font-weight, font-size и font-family */
+    width: 60px;
+    margin-top: 60px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+/* Элемент с белым, жирным текстом (размер 12 пикселей), шириной 60 пикселей. Отступ сверху - 60 пикселей. Текст расположен вертикально и повёрнут на 180 градусов. */
+.about {
+	padding: 95px 0 105px 0
+}
+/* Элемент с отступами 95 пикселей сверху, 105 пикселей снизу. */
+.about__container {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+/* Контейнер, использующий flex-свойства для выравнивания и распределения элементов внутри. Отображается в виде блока. Элементы распределяются по горизонтали с выравниванием по центру. */
+.about__text {
+	width: 50%;
+	max-width: 600px;
+	text-align: center
+}
+/* Текстовый блок, ширина 50%, максимальная ширина 600 пикселей. Выравнивание текста по центру. */
+.about__img {
+	width: 50%;
+	max-width: 570px;
+	position: relative
+}
+/* Изображение, занимающее 50% ширины, с максимальной шириной 570 пикселей. Позиционирование элемента относительно родительского контейнера. */
+.about__img .circle {
+	right: 0;
+	transform: translate(30%, -50%)
+}
+/* Круговой элемент внутри .about__img. Размещается справа от блока и смещается на 30% вправо и на 50% вверх относительно своей исходной позиции. */
+.about__img img {
+	width: 100%;
+	height: auto
+}
+/* Изображение внутри блока .about__img. Занимает 100% ширины и высчитывает высоту автоматически для поддержки пропорций. */
+.team {
+	background: url(./../img/bg-team.jpg) center/cover no-repeat;
+	padding: 45px 0 100px 0
+}
+/* Стили для блока с классом .team. Задается фоновое изображение с настройками центрирования и замощения. Добавляется внутренний отступ в 45 пикселей сверху и 100 пикселей снизу. */
+.team h6 {
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	font-size: 12px;
+	letter-spacing: 0.5em
+}
+/* Заголовок шестого уровня внутри блока .team. Выравнивание текста по центру, белый цвет текста, жирное начертание, размер шрифта 12 пикселей и увеличенное межбуквенное расстояние. */
+.team__container {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 45px;
+}
+/* Контейнер для блока с классом .team. Использует flex-контейнер для управления расположением элементов. Выравнивание содержимого по горизонтали и вертикали, а также создание переноса элементов на следующую строку в случае нехватки места. Верхний отступ установлен в 45 пикселей. */
+.team__text {
+	width: 50%;
+	max-width: 600px;
+	text-align: center;
+	color: #fff
+}
+/* Текстовый блок, занимающий половину ширины родительского контейнера, но не более 600 пикселей. Выравнивание текста по центру. Белый цвет текста. */
+.team__img {
+	width: 50%;
+	max-width: 570px;
+	position: relative;
+	padding-left: 30px
+}
+/* Изображение команды. Занимает половину ширины родительского контейнера, но не более 570 пикселей. Располагается относительно (position: relative). Есть внутренний отступ слева (padding-left: 30px). */
+.team__img .circle {
+	left: 0;
+	transform: translate(-30%, -50%)
+}
+/* Элемент с классом .circle, находящийся внутри блока с классом .team__img. Расположен слева от изображения и смещен вверх на 50% от своей высоты. Позиционирование осуществляется с использованием трансформации. */
+.team__img img {
+	width: 100%;
+	height: auto
+}
+/* Изображение внутри блока .team__img. Занимает 100% ширины блока и подстраивается по высоте автоматически. */
+.order {
+	padding: 100px 0 45px 0
+}
+/* Блок для раздела заказа. Вероятно, предназначен для отображения информации о заказе. Внутренние отступы задают 100 пикселей сверху и 45 пикселей снизу. */
+.order__container {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+/* Контейнер для раздела заказа. Элемент блочной модели, который использует flex-контейнер. Дочерние элементы обтекают друг друга, занимая пространство по ширине родительского контейнера. Элементы выравниваются по центру как по горизонтали, так и по вертикали. */
+.order__text {
+	width: 50%;
+	max-width: 565px;
+	text-align: center
+}
+/* Текстовый контейнер в разделе заказа. Занимает половину ширины родительского контейнера, но не более 565 пикселей. Текст внутри контейнера выровнен по центру. */
+.order-form {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+/* Форма заказа, оформленная как flex-контейнер, который обеспечивает выравнивание дочерних элементов по горизонтали, равномерное распределение пространства между ними и выравнивание по центру как по горизонтали, так и по вертикали. */
+.order-form input {
+	width: calc(50% - 5px);
+	margin-bottom: 10px;
+	border-radius: 5px;
+	background: #e5e5e5;
+	border: 1px solid transparent;
+	outline: none;
+	height: 60px;
+	padding: 0 20px;
+	font-weight: 400;
+	font-size: 14px
+}
+/* Поля ввода в форме заказа. Ширина установлена так, чтобы каждое поле занимало половину ширины контейнера с небольшим отступом между ними. Заданы стили для форматирования внешнего вида: скругленные углы, задний фон, границы, высота, отступы и размер шрифта. */
+.order-form input::-webkit-input-placeholder {
+	color: rgba(51, 51, 51, 0.5)
+}
+/*Стили для плейсхолдера в полях ввода. Задан цвет текста и полупрозрачность. */
+.order-form input:-ms-input-placeholder {
+	color: rgba(51, 51, 51, 0.5)
+}
+
+.order-form input::-ms-input-placeholder {
+	color: rgba(51, 51, 51, 0.5)
+}
+
+.order-form input::placeholder {
+	color: rgba(51, 51, 51, 0.5)
+}
+/* Дополнительные стили для плейсхолдера в полях ввода, настроенные для браузеров Internet Explorer и Microsoft Edge. */
+.order-form input:focus {
+	border: 1px solid #E8C300
+}
+/* Стили для поля ввода в фокусе. Задан цвет границы, чтобы выделить активное поле. */
+.order-form .order__select {
+	width: calc(50% - 5px);
+	margin-bottom: 10px;
+	position: relative
+}
+/* Стили для выпадающего списка в форме заказа. Ширина установлена так, чтобы занимать половину ширины контейнера с небольшим отступом. */
+.order-form .order__select::after {
+	content: '';
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	right: 10px;
+	top: calc(50% - 10px);
+	pointer-events: none
+}
+/* Стили для псевдоэлемента ::after внутри выпадающего списка, создающего стрелку. Заданы размер, положение и отключены события указателя для элемента. */
+.order-form .order__select select {
+	width: 100%;
+	background: #E5E5E5;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	height: 60px;
+	outline: none;
+	padding: 0 20px;
+	font-weight: 400;
+	font-size: 14px;
+	appearance: none
+}
+/* Дополнительные стили для выпадающего списка в форме заказа. Заданы фон, границы, радиус скругления углов, высота, отступы и шрифт. Свойство outline установлено в none для убирания стандартного контура при фокусе. */
+.order-form .order__select select:not(:valid) {
+	color: rgba(51, 51, 51, 0.5)
+}
+/* Если выбранное значение не валидно (например, если пользователь не выбрал ничего), устанавливается цвет текста для подсказки (плейсхолдера). */
+.order-form .order__select option {
+	color: #000
+}
+/* Цвет текста для каждого элемента в выпадающем списке. */
+.order-form button {
+	width: 100%;
+	border: none;
+	background: #E8C300;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 12px;
+	font-family: "Open Sans", sans-serif;
+	border-radius: 5px;
+	color: #fff;
+	height: 60px;
+	text-transform: uppercase;
+	transition: 0.3s
+}
+/* Стили для кнопки в форме заказа. Заданы ширина, отсутствие границ, фон, курсор при наведении, вес и размер шрифта, семейство шрифта, радиус скругления углов, цвет текста, высота и преобразование текста в верхний регистр. Также установлен эффект перехода при наведении. */
+.order-form button:hover {
+	background: #cfae00
+}
+/* Стили для кнопки при наведении. Задано изменение фона при наведении для создания визуального эффекта. */
+.order__img {
+	width: 50%;
+	max-width: 475px;
+	position: relative;
+	right: 40px
+}
+/* Стили для изображения в разделе заказа. Устанавливается ширина (50% от ширины контейнера, но не более 475 пикселей), максимальная ширина (475 пикселей), позиция относительно родительского элемента (50% ширины контейнера вправо), чтобы изображение было посередине, но смещено вправо на 40 пикселей. */
+.order__img .circle {
+	right: 0;
+	transform: translate(50%, -50%)
+}
+/* Стили для круга, который находится внутри изображения в разделе заказа. Задана позиция справа и смещение вправо на 50% ширины круга. */
+.order__img img {
+	width: 100%;
+	height: auto;
+	border-radius: 5px;
+	filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.5))
+}
+/* Стили для изображения внутри раздела заказа. Задана ширина (100% от ширины контейнера), автоматическая высота, скругление углов (5 пикселей), и фильтр тени для создания эффекта тени вокруг изображения. */
+.order__contacts {
+	font-size: 12px;
+	line-height: 12px;
+	text-align: center;
+	color: rgba(51, 51, 51, 0.5);
+	padding-top: 45px
+}
+/* Стили для контактной информации в разделе заказа. Задан размер шрифта (12 пикселей), межстрочное расстояние (12 пикселей), выравнивание по центру, цвет текста (полупрозрачный серый), и верхний внутренний отступ (45 пикселей). */
+.order__contacts a {
+	color: rgba(51, 51, 51, 0.5);
+	font-weight: 700
+}
+/* Стили для ссылок в контактной информации в разделе заказа. Задан цвет текста (полупрозрачный серый) и жирное начертание шрифта (700). */
+.swiper-container {
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	overflow: hidden;
+	list-style: none;
+	padding: 0;
+	z-index: 1
+}
+/* Стили для контейнера Swiper. Установлены отступы слева и справа в автоматическом режиме, относительное позиционирование, скрытие переполнения, нулевые отступы и маргины, и z-индекс (1). */
+.swiper-container-vertical>.swiper-wrapper {
+	flex-direction: column
+}
+/* Стили для вертикального расположения обертки Swiper. Задан ориентир в виде вертикального столбца. */
+.swiper-wrapper {
+	.swiper-wrapper {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		display: flex;
+		transition-property: transform;
+		box-sizing: content-box;
+	}
+}
+/* Стили для обертки слайдов Swiper. Задано относительное позиционирование, ширину и высоту 100%, z-индекс 1. Применен flex-контейнер с возможностью горизонтального выравнивания и переходы для свойства transform. */
+.swiper-container-android .swiper-slide,
+.swiper-wrapper {
+	transform: translate3d(0px, 0, 0)
+}
+/* Стили, связанные с использованием Android. Применено 3D-перемещение с translate3d(0px, 0, 0). Это может использоваться для оптимизации производительности на Android-устройствах. */
+.swiper-container-multirow>.swiper-wrapper {
+	flex-wrap: wrap
+}
+/* Стили для многорядного расположения обертки Swiper. Если контейнер Swiper настроен на многорядное расположение, элементы будут обернуты во flex-контейнер с возможностью переноса. */
+.swiper-container-multirow-column>.swiper-wrapper {
+	flex-wrap: wrap;
+    flex-direction: column;
+}
+/* Стили для многорядной компоновки с колонками. Устанавливаются свойства для переноса элементов в вертикальном направлении. */
+.swiper-container-free-mode>.swiper-wrapper {
+	transition-timing-function: ease-out;
+	margin: 0 auto
+}
+/* Стили для контейнера, настроенного на режим свободного скольжения (free mode). Устанавливается функция времени для плавности анимации, а также отступы слева и справа, чтобы выравнять контейнер по центру. */
+.swiper-container-pointer-events {
+	touch-action: pan-y
+}
+/* Задаются свойства взаимодействия с событиями указателя для контейнера Swiper. Для горизонтального контейнера указано pan-y, а для вертикального - pan-x. */
+.swiper-container-pointer-events.swiper-container-vertical {
+	touch-action: pan-x
+}
+/* Дополнительные стили для контейнера Swiper, указывающие на использование вертикального режима взаимодействия с событиями указателя. */
+.swiper-slide {
+	flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+}
+/* Стили для слайда в контейнере Swiper. Определяется его размер, положение и свойства перехода для анимации. */
+.swiper-slide-invisible-blank {
+	visibility: hidden
+}
+/* Стили для невидимого слайда с пустотой (blank), который делается невидимым с использованием свойства visibility. */
+.swiper-container-autoheight,
+.swiper-container-autoheight .swiper-slide {
+	height: auto
+}
+/* Стили для контейнера и его слайдов, устанавливающие автоматическую высоту. */
+.swiper-container-autoheight .swiper-wrapper {
+	align-items: flex-start;
+    transition-property: transform, height;
+}
+/* Стили для обеспечения вертикального выравнивания слайдов в контейнере Swiper с автоматической высотой. Задаются свойства для анимации высоты и трансформации. */
+.swiper-container-3d {
+	perspective: 1200px
+}
+/* Стили для контейнера Swiper, который использует 3D-перспективу. Устанавливается значение perspective для создания эффекта 3D. */
+.swiper-container-3d .swiper-wrapper,
+.swiper-container-3d .swiper-slide,
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right,
+.swiper-container-3d .swiper-slide-shadow-top,
+.swiper-container-3d .swiper-slide-shadow-bottom,
+.swiper-container-3d .swiper-cube-shadow {
+	transform-style: preserve-3d
+}
+/* Стили для элементов в 3D-контейнере Swiper, определяющие их 3D-поведение и тени. Задаются свойства для сохранения 3D-трансформации. */
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right,
+.swiper-container-3d .swiper-slide-shadow-top,
+.swiper-container-3d .swiper-slide-shadow-bottom {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 10
+}
+/* Эти стили устанавливают тени для слайдов в 3D-контейнере Swiper с абсолютным позиционированием, начиная с верхнего левого угла и занимая всю площадь слайда. Тени не взаимодействуют с событиями указателя и находятся поверх слайдов. */
+.swiper-container-3d .swiper-slide-shadow-left {
+	background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+/* Тень слева. Устанавливает абсолютное позиционирование, размеры и градиент для создания тени слева. */
+.swiper-container-3d .swiper-slide-shadow-right {
+	background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+/* Тень справа. Устанавливает абсолютное позиционирование, размеры и градиент для создания тени справа. */
+.swiper-container-3d .swiper-slide-shadow-top {
+	background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+/* Тень сверху. Устанавливает абсолютное позиционирование, размеры и градиент для создания тени сверху. */
+.swiper-container-3d .swiper-slide-shadow-bottom {
+	background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+/* Этот стиль устанавливает тень для нижней части слайдов в 3D-контейнере Swiper с использованием градиента, что создает плавный переход от полупрозрачного черного к полной прозрачности. */
+.swiper-container-css-mode>.swiper-wrapper {
+	overflow: auto;
+	scrollbar-width: none;
+}
+/* Этот стиль применяется к контейнеру Swiper, когда используется CSS-режим. В этом режиме контейнер Swiper работает как обычный блочный контейнер. */
+.swiper-container-css-mode>.swiper-wrapper::-webkit-scrollbar {
+	display: none
+}
+/* Этот стиль применяется к обертке слайдов в режиме CSS. Он устанавливает скрытие стандартных полос прокрутки (scrollbar) и настраивает выравнивание слайдов с использованием CSS Scroll Snap. */
+.swiper-container-css-mode>.swiper-wrapper>.swiper-slide {
+	scroll-snap-align: start start
+}
+/* Этот стиль скрывает полосу прокрутки вебкит-браузеров. */
+.swiper-container-horizontal.swiper-container-css-mode>.swiper-wrapper {
+	scroll-snap-type: x mandatory
+}
+/* Этот стиль применяется к горизонтальному контейнеру Swiper в режиме CSS. Он устанавливает обязательный режим прокрутки по горизонтали с использованием CSS Scroll Snap. */
+.swiper-container-vertical.swiper-container-css-mode>.swiper-wrapper {
+	scroll-snap-type: y mandatory
+}
+/* Этот стиль применяется к вертикальному контейнеру Swiper в режиме CSS. Он устанавливает обязательный режим прокрутки по вертикали с использованием CSS Scroll Snap. */
+.spec__container {
+	position: relative
+}
+/* Этот стиль применяется к контейнеру секции, устанавливая его положение как относительное (position: relative), что позволяет использовать абсолютное позиционирование внутри этого контейнера. */
+.spec__container h6 {
+	color: #fff;
+	font-weight: 700;
+	font-size: 12px;
+	letter-spacing: 0.5em;
+	text-transform: uppercase;
+	text-align: center;
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	top: 45px
+}
+/* Этот стиль применяется к заголовку h6 внутри контейнера секции. Он устанавливает цвет текста, толщину шрифта, размер шрифта, интервал между буквами, преобразование текста в верхний регистр, выравнивание по центру, а также абсолютное позиционирование с шириной 100% и отступом сверху. */
+.spec__slide {
+	background: url(./../img/bg-slide.jpg) center/cover no-repeat;
+	padding: 105px 0 95px 0
+}
+/* Этот стиль применяется к слайду в секции. Он устанавливает фон слайда с использованием изображения (background: url(./../img/bg-slide.jpg) center/cover no-repeat) и отступы сверху, снизу, слева и справа для создания отступов вокруг контента внутри слайда (padding: 105px 0 95px 0). */
+.spec__slide-container {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Этот стиль применяется к контейнеру внутри слайда. Он использует flex-контейнер для создания раскладки, где элементы обтекают друг друга. Опции justify-content и align-items используются для выравнивания элементов по горизонтали и вертикали соответственно. */
+.spec__text {
+	width: 50%;
+	max-width: 600px;
+	text-align: center;
+	color: #fff;
+	padding-left: 30px
+}
+/* Этот стиль применяется к текстовому блоку внутри слайда. Он устанавливает ширину текста до 50% от контейнера, максимальную ширину в 600px, цвет текста белый (#fff), выравнивание по центру и дополнительный отступ слева в 30px. */
+.spec__img {
+	width: 50%;
+	max-width: 570px;
+	position: relative
+}
+/* Этот стиль применяется к изображению внутри слайда. Он устанавливает ширину изображения до 50% от контейнера, максимальную ширину в 570px, и использует относительное позиционирование для возможности дополнительной настройки расположения изображения относительно других элементов. */
+.spec__img .circle {
+	left: 0;
+	transform: translate(-30%, -50%)
+}
+/* Этот стиль применяется к элементу с классом .circle внутри блока .spec__img. Он устанавливает отступ слева в 0 и использует свойства transform для смещения элемента на 30% влево и 50% вверх относительно его собственных размеров. Это создает эффект круга, расположенного слева и частично выходящего за пределы блока. */
+.spec__img img {
+	width: 100%;
+	height: auto
+}
+/* Устанавливает стили для изображения внутри блока с классом .spec__img, делая его занимающим 100% ширины родительского контейнера и сохраняющим пропорции. */
+.spec__pagination {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    bottom: 45px;
+    z-index: 2;
+}
+/* Стили для пагинации (навигационных точек) слайдера в блоке .spec__pagination. Использует flex для центрирования точек и устанавливает их внизу контейнера с отступом от нижней грани. */
+.spec__pagination .swiper-pagination-bullet {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.5);
+	cursor: pointer;
+	margin: 0 10px;
+	transition: 0.3s
+}
+/* Стили для отдельной точки пагинации слайдера в блоке .spec__pagination. Устанавливает размер, форму, цвет фона и курсор при наведении. Также применяется плавный переход при изменении свойств. */
+.spec__pagination .swiper-pagination-bullet:hover {
+	background: #fff
+}
+/* Эффект при наведении на точку пагинации, изменяет цвет фона на белый. */
+.spec__pagination .swiper-pagination-bullet-active {
+	background: #fff
+}
+/* Стили для активной точки пагинации слайдера, устанавливает белый цвет фона. */
+.menu {
+	padding: 70px 0 75px
+}
+/* Устанавливает отступы для блока меню. */
+.menu h2 {
+	text-align: center
+}
+/* Стили для заголовка меню, центрирует текст. */
+.menu__intro {
+	max-width: 565px;
+	margin: 0 auto;
+	text-align: center
+}
+/* Устанавливает максимальную ширину, автоматический отступ, и центрирует текст в блоке .menu__intro. */
+.tabs__container {
+	margin: 45px auto 55px;
+	position: relative;
+	height: 60px;
+	max-width: 1230px;
+	overflow-y: hidden;
+	overflow-x: auto
+}
+/* Устанавливает отступы, позицию, максимальную ширину, и скрытие горизонтальной прокрутки в блоке вкладок .tabs__container. */
+.tabs__container::-webkit-scrollbar {
+	height: 8px;
+	background: #333
+}
+/* Стилизация полосы прокрутки веб-браузера. */
+.tabs__container::-webkit-scrollbar-thumb {
+	background: #E8C300
+}
+/* Стилизация ползунка полосы прокрутки веб-браузера. */
+.tabs {
+	position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+/* Устанавливает абсолютное позиционирование, центрирует по горизонтали относительно родительского элемента, и создает гибкую контейнерную модель с центрированием содержимого в блоке .tabs. */
+.tabs__item {
+	min-width: 163px;
+    cursor: pointer;
+    padding: 0 10px;
+    transition: 0.3s;
+    font: 700 12px/47px "Open Sans", sans-serif;
+    color: #333;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid rgba(51, 51, 51, 0.2);
+}
+/* Устанавливает стили для элементов вкладок, включая минимальную ширину, указатель при наведении, переходы, шрифтовые стили, цвет текста, высоту, и границу справа. */
+.tabs__item:hover,
+.tabs__item.active {
+	background: #E8C300
+}
+/* Здесь устанавливаются стили для случаев, когда пользователь наводит курсор мыши на таб (:hover) или когда таб активен (active). Фон таба становится цвета #E8C300 (желтый). */
+.tabs__item:last-child {
+	border: none
+}
+/* Этот стиль удаляет границу у последнего элемента с классом .tabs__item. Это может быть полезно для того, чтобы избежать ненужных границ. */
+.tabs.overflow {
+	left: 0;
+	transform: none
+}
+/* Этот код устанавливает значения left и transform в ноль для элемента с классом .tabs.overflow. Это, вероятно, используется для сброса каких-то стилей, связанных с позиционированием и трансформацией, когда табы переполняют свой контейнер. */
+.menu__sliders {
+	position: relative;
+	max-width: 1400px;
+	margin: 0 auto;
+	overflow: hidden;
+	height: 460px
+}
+/* Этот блок стилей устанавливает свойства для контейнера слайдеров меню. Он имеет максимальную ширину в 1400 пикселей, центрируется по горизонтали (margin: 0 auto), обрезается по горизонтали, если содержимое выходит за пределы (overflow: hidden), и имеет высоту 460 пикселей. */
+.menu__slider {
+	height: 100%
+}
+/* Этот блок стилей устанавливает высоту каждого отдельного слайдера в меню в 100% от родительского контейнера. */
+.menu__slider-block {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 1;
+	opacity: 0;
+	transition: 1s
+}
+/* Этот блок занимает 100% ширины и высоты родительского контейнера, имеет абсолютное позиционирование, начальную непрозрачность 0 и длительность анимации перехода 1 секунду. */
+.menu__slider-block.show {
+	opacity: 1;
+	z-index: 2
+}
+/* Когда добавляется класс .show, блок становится видимым с полной непрозрачностью (1) и более высоким z-index, возможно, для выделения над другими элементами. */
+.menu__item {
+	max-width: 510px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Элемент меню имеет максимальную ширину 510 пикселей, использует гибкую модель, располагает элементы в пространстве между ними и выравнивает их по центру. */
+.menu__item-img {
+	width: 260px;
+	height: 170px;
+	object-fit: cover;
+	border: 6px solid #E8C300
+}
+/* Элемент, представляющий изображение в меню, имеет ширину 260 пикселей, высоту 170 пикселей, использует свойство object-fit: cover для заполнения контейнера и имеет границу толщиной 6 пикселей и цвета #E8C300. */
+.menu__item-text {
+	max-width: 220px;
+	margin-left: 25px
+}
+/* Этот блок текста в элементе меню имеет максимальную ширину 220 пикселей и отступ слева 25 пикселей. */
+.menu__title,
+.menu__price {
+	font-family: "Kurale", serif;
+	text-transform: uppercase;
+	font-size: 18px;
+	color: #333;
+	font-weight: 400
+}
+/* Элементы заголовка и цены имеют шрифт "Kurale", преобразование текста в верхний регистр, размер шрифта 18 пикселей, цвет текста #333 и нормальный вес шрифта 400. */
+.menu__title {
+	display: inline-block;
+	border-bottom: 1px solid #333
+}
+/* Заголовок также является блочным элементом с подчёркиванием текста снизу толщиной 1 пиксель цвета #333. */
+.menu__desc {
+	font-size: 12px;
+	line-height: 14px;
+	color: rgba(51, 51, 51, 0.5);
+	margin-top: 24px
+}
+/* Описание имеет размер шрифта 12 пикселей, высоту строки 14 пикселей, полупрозрачный цвет текста rgba(51, 51, 51, 0.5) и отступ сверху 24 пикселя. */
+.menu__slider .swiper-slide {
+	height: 175px;
+	margin-bottom: 55px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: center
+}
+/* Стили для каждого слайда в слайдере меню. Установленная высота 175 пикселей, отступ снизу 55 пикселей, и элементы слайда выравниваются по центру. */
+.menu__pagination {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 2;
+}
+/* Стили для пагинации слайдера. Пагинация располагается внизу слайдера и выравнивается по центру. */
+.menu__pagination .swiper-pagination-bullet {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: rgba(51, 51, 51, 0.5);
+	cursor: pointer;
+	margin: 0 10px;
+	transition: 0.3s
+}
+/* Стили для каждой точки пагинации. Они имеют круглую форму с радиусом 10 пикселей, фон цвета rgba(51, 51, 51, 0.5), указательный курсор при наведении и анимацию перехода длительностью 0.3 секунды. */
+.menu__pagination .swiper-pagination-bullet:hover,
+.menu__pagination .swiper-pagination-bullet-active {
+	background: #E8C300
+}
+/* Стили для точек пагинации при наведении. Фон меняется на цвет #E8C300.Стили для активной точки пагинации. Фон также устанавливается в цвет #E8C300. */
+.events {
+	background: url(./../img/bg-events.jpg) center/cover no-repeat;
+	padding: 45px 0
+}
+/* Стили для раздела событий. Устанавливается фоновое изображение с центрированием и заполнением контейнера. Отступы сверху и снизу равны 45 пикселям. */
+.events h6 {
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 12px;
+	letter-spacing: 0.5em;
+	color: #fff
+}
+/* Стили для заголовка раздела событий. Текст выравнивается по центру, применяется верхний регистр, задается жирность, размер, расстояние между буквами и цвет текста. */
+.events__container {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 45px 160px;
+}
+/* Стили для контейнера событий. Элементы в контейнере располагаются с пространством между ними. */
+.left__event {
+	position: relative
+}
+/* Стили для левой части события. Устанавливается относительное позиционирование. */
+.left__event .circle {
+	left: 0;
+	transform: translate(-50%, -50%)
+}
+/* Стили для круга в левой части события. Располагается слева и по вертикали центрируется относительно родителя с использованием transform. */
+.left__event .event__title {
+	right: 0
+}
+/* Стили для заголовка события в левой части. Выравнивается справа. */
+.right__event {
+	position: relative
+}
+/* Стили для правой части события. Устанавливается относительное позиционирование. */
+.right__event .circle {
+	right: 0;
+	transform: translate(50%, -50%)
+}
+/* Стили для круга в правой части события. Располагается справа и по вертикали центрируется относительно родителя с использованием transform. */
+.right__event .event__title {
+	left: 0;
+	transform: scale(-1)
+}
+/* Стили для заголовка события в правой части. Выравнивается слева и происходит отражение по горизонтали с помощью transform: scale(-1). */
+.left__event img,
+.right__event img {
+	width: 100%;
+	height: auto
+}
+/* Стили для изображений в левой и правой частях события. Ширина устанавливается на 100%, а высота автоматически рассчитывается. */
+.event__title {
+	background: #000;
+	border-radius: 0px 5px 5px 0px;
+	font-family: "Kurale", serif;
+	font-size: 24px;
+	text-transform: uppercase;
+	color: #fff;
+	padding: 30px 20px;
+	writing-mode: vertical-rl;
+	position: absolute;
+	top: 0;
+	height: 100%
+}
+/* Стили для заголовка события. Фоновый цвет, радиус скругления, шрифт, размер, преобразование текста и цвет текста заданы */
+.events__contacts {
+	font-size: 12px;
+	line-height: 12px;
+	text-align: center;
+	color: rgba(255, 255, 255, 0.5)
+}
+/* Стили для контактной информации в разделе событий. Задан размер шрифта, высота строки, выравнивание текста и цвет. */
+.events__contacts a {
+	color: rgba(255, 255, 255, 0.5)
+}
+/* Стили для ссылок в разделе событий. Задан цвет ссылок. */
+.contacts {
+	padding: 50px 0 90px
+}
+/* Стили для раздела контактов. Задан отступ сверху, снизу. */
+.contacts h2 {
+	text-align: center
+}
+/* Заголовок раздела контактов выровнен по центру. */
+.contacts__intro {
+	max-width: 520px;
+	margin: 0 auto;
+	text-align: center;
+	margin-bottom: 40px
+}
+/* Вводный текст раздела контактов с заданным максимальным размером, выравниванием по центру и нижним отступом. */
+.contacts__form {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+/* Стили для контейнера формы контактов. Заданы свойства для флекс-контейнера. */
+.contacts__form input,
+.contacts__form textarea {
+	width: calc(33.333% - 16px);
+	margin: 0 8px 16px;
+	height: 60px;
+	border-radius: 5px;
+	background: #e5e5e5;
+	border: 1px solid transparent;
+	outline: none;
+	padding: 0 20px;
+	font-weight: 400;
+	font-size: 14px
+}
+/* Стили для полей ввода и текстовой области формы контактов. Заданы размеры, отступы, радиус скругления, фон, граница, отсутствие контура и шрифт. */
+.contacts__form input::placeholder,
+.contacts__form textarea::placeholder {
+	color: rgba(51, 51, 51, 0.5)
+}
+/* Этот селектор применяется к плейсхолдеру внутри поля ввода в блоке с классом contacts__form. Устанавливается цвет текста плейсхолдера (rgba(51, 51, 51, 0.5)), что делает его светло-серым.Аналогично предыдущему, но для текстовой области. */
+.contacts__form input:focus,
+.contacts__form textarea:focus {
+	border: 1px solid #E8C300
+}
+/* Этот селектор применяется к полю ввода при его фокусировке. Устанавливается стиль границы с цветом #E8C300 (желтый).Аналогично предыдущему, но для текстовой области при фокусировке. */
+.contacts__form textarea {
+	width: 100%;
+	height: 120px;
+	padding: 20px;
+	resize: none
+}
+/* Текстовая область формы контактов: Устанавливается ширина, высота, отступы и отключается возможность изменения размера. */
+.contacts__data-submit {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 8px;
+}
+/* Контейнер для блока с кнопкой отправки формы: Задаются стили для флекс-контейнера, который содержит кнопку отправки. */
+.contacts__data-submit button {
+	width: 50%;
+	max-width: 580px;
+	background: #E8C300;
+	border: none;
+	cursor: pointer;
+	height: 60px;
+	border-radius: 5px;
+	font-weight: 700;
+	font-size: 12px;
+	font-family: "Open Sans", sans-serif;
+	color: #fff;
+	text-transform: uppercase;
+	transition: 0.3s
+}
+/* Кнопка отправки формы: Устанавливаются стили для кнопки, такие как цвет, размер, шрифт и переходные эффекты. */
+.contacts__data-submit button:hover {
+	background: #cfae00
+}
+/* эффект для кнопки отправки формы: При наведении на кнопку изменяется цвет фона. */
+.contacts__data {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+/* Контейнер для блока с данными: Задаются стили для флекс-контейнера, который содержит блок с данными. */
+.contacts__data-item {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 700;
+    font-size: 12px;
+    color: rgba(51, 51, 51, 0.5);
+    margin-right: 20px;
+}
+/* Элементы с данными: Устанавливаются стили для блоков с данными, такие как шрифт, цвет текста и отступы. */
+.contacts__data-item a {
+	color: rgba(51, 51, 51, 0.5)
+}
+/* Ссылки внутри элементов с данными: Задаются стили для ссылок внутри блоков с данными, такие как цвет */
+.contacts__data-item svg {
+	width: 14px;
+	height: 16px;
+	margin-right: 5px
+}
+/* Иконки в блоке с данными: Устанавливаются размеры и отступы для иконок внутри блока с данными. */
+.map {
+	width: 100%;
+	height: 475px
+}
+
+.map iframe {
+	width: 100%;
+	height: 100%
+}
+/* Стили для карты: Устанавливаются размеры для контейнера карты и встроенного iframe. */
+footer {
+	background: rgba(0, 0, 0, 0.9);
+	text-align: center;
+	padding: 10px;
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 12px
+}
+/* Стили для футера: Задаются фон, выравнивание текста, отступы и цвет текста футера. */
+footer a {
+	font-weight: 700;
+	color: rgba(255, 255, 255, 0.5)
+}
+/* Стили для ссылок в футере: Задаются стили для ссылок внутри футера, такие как цвет и жирность шрифта. */
